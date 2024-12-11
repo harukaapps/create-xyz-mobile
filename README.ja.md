@@ -13,6 +13,7 @@
 - 🎨 Create.xyzのデザインを保持
 - 🛠 効率的な開発ワークフロー
 - 📦 簡単なデプロイメントプロセス
+- 📲 iOSとAndroid両プラットフォームをサポート
 
 ## なぜCreate.xyz Mobileか？
 
@@ -103,6 +104,26 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
    - "デバイスの作成" をクリック
    - デバイス定義とシステムイメージを選択
 
+### iOS開発環境のセットアップ
+
+1. [公式サイト](https://developer.apple.com/xcode/)からXcodeをインストール
+
+2. Xcodeを通じて以下をインストール：
+   - Xcode
+   - iOS SDK
+
+3. 環境変数の設定：
+```bash
+# macOSの場合
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+```
+
+4. Xcode でiOSシミュレーターを作成：
+   - Xcodeを開く
+   - "ウィンドウ" > "デバイス" をクリック
+   - "デバイスの作成" をクリック
+   - デバイス定義とシステムイメージを選択
+
 ### モバイル用ビルド
 
 #### Android
@@ -110,6 +131,13 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 npm run build
 npx cap sync android
 npx cap open android
+```
+
+#### iOS
+```bash
+npm run build
+npx cap sync ios
+npx cap open ios
 ```
 
 ## 開発
@@ -122,6 +150,7 @@ npx cap open android
 - `npm run lint` - ESLintの実行
 - `npm run format` - Prettierでのコードフォーマット
 - `npm run android` - ビルドしてAndroid Studioで開く
+- `npm run ios` - ビルドしてXcodeで開く
 
 ### アプリアイコンのカスタマイズ
 
