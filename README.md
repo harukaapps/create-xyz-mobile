@@ -13,6 +13,7 @@ Transform your [Create.xyz](https://create.xyz) applications into mobile apps wi
 - 🎨 Retain your Create.xyz design
 - 🛠 Efficient development workflow
 - 📦 Easy deployment process
+- 📲 Support for both iOS and Android platforms
 
 ## Why Create.xyz Mobile?
 
@@ -105,11 +106,37 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
    - Click "Create Device"
    - Select a device definition and system image
 
+#### iOS Development Setup
+
+1. Install Xcode 15 or later from the [official website](https://developer.apple.com/xcode/)
+
+2. Install the following through Xcode:
+   - Xcode Command Line Tools
+
+3. Set up environment variables:
+```bash
+# For macOS
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+```
+
+4. Create a new iOS Simulator in Xcode:
+   - Open Xcode
+   - Click "Window" > "Devices"
+   - Click the "+" button
+   - Select a device definition and system image
+
 #### Android
 ```bash
 npm run build
 npx cap sync android
 npx cap open android
+```
+
+#### iOS
+```bash
+npm run build
+npx cap sync ios
+npx cap open ios
 ```
 
 ## Development
@@ -122,6 +149,7 @@ npx cap open android
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 - `npm run android` - Build and open in Android Studio
+- `npm run ios` - Build and open in Xcode
 
 ### Customizing App Icons
 
